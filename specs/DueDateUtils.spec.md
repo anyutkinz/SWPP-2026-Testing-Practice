@@ -9,7 +9,7 @@
 **Intent**: Build the D-day label shown next to a task in the task list. A completed task gets `"CLEAR"` with or without a due date; an active task with no due date gets no label (`""`); an active task with a due date gets `"D-N"` when it is due in N days, `"D-Day"` when it is due today and `"D+N"` when it is overdue by N days, where N is the total number of calendar days between `today` and `dueDate`.
 
 **Pre-conditions**
-- `today` is the current local date, supplied by the caller (the function does not read the clock).
+- `today` is any `LocalDate`; it is the reference date the label is computed against. The app passes the device's current date, but the function never reads the clock itself, so any fixed date (for example 2028-02-28) is valid input.
 - `dueDate` is the task's due date, or `null` when the task has no due date.
 - `isCompleted` is `true` for a completed task and `false` for an active task.
 
@@ -35,6 +35,8 @@
     - Tip: Given dueDate = 2026-09-01, today = 2026-10-20, isCompleted = false / When dueDateLabel(dueDate, today, isCompleted) is called / Then it returns "D+49".
   - Active task due across a year end and more than one month ahead. `[Unit]`
     - Tip: Given dueDate = 2027-02-10, today = 2026-12-20, isCompleted = false / When dueDateLabel(dueDate, today, isCompleted) is called / Then it returns "D-52".
+  - Active task overdue across a year end by more than one month: N counts every calendar day in between. `[Unit]`
+    - Tip: Given dueDate = 2026-11-20, today = 2027-01-10, isCompleted = false / When dueDateLabel(dueDate, today, isCompleted) is called / Then it returns "D+51".
   - Active task due exactly one year ahead. `[Unit]`
     - Tip: Given dueDate = 2027-10-20, today = 2026-10-20, isCompleted = false / When dueDateLabel(dueDate, today, isCompleted) is called / Then it returns "D-365".
 - Error cases
@@ -56,7 +58,9 @@
     - Tip: Given dueDate = 2026-10-30, today = 2026-10-31, isCompleted = false / When dueDateLabel(dueDate, today, isCompleted) is called / Then it returns "D+1".
     - Tip: Given dueDate = 2026-10-31, today = 2026-10-31, isCompleted = false / When dueDateLabel(dueDate, today, isCompleted) is called / Then it returns "D-Day".
     - Tip: Given dueDate = 2026-11-01, today = 2026-10-31, isCompleted = false / When dueDateLabel(dueDate, today, isCompleted) is called / Then it returns "D-1".
-  - Year end, one day apart in each direction. `[Unit]`
+  - Year end: `today` is the last day of the year and the due date is one day before it, on it and one day after it; plus the reverse direction from the first day of the next year. `[Unit]`
+    - Tip: Given dueDate = 2026-12-30, today = 2026-12-31, isCompleted = false / When dueDateLabel(dueDate, today, isCompleted) is called / Then it returns "D+1".
+    - Tip: Given dueDate = 2026-12-31, today = 2026-12-31, isCompleted = false / When dueDateLabel(dueDate, today, isCompleted) is called / Then it returns "D-Day".
     - Tip: Given dueDate = 2027-01-01, today = 2026-12-31, isCompleted = false / When dueDateLabel(dueDate, today, isCompleted) is called / Then it returns "D-1".
     - Tip: Given dueDate = 2026-12-31, today = 2027-01-01, isCompleted = false / When dueDateLabel(dueDate, today, isCompleted) is called / Then it returns "D+1".
   - End of February in a leap year and in a common year. `[Unit]`
