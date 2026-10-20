@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.example.swpp.tododapp.taskdetail.TaskDetailFragmentTest" tests="18" failures="5" errors="0" skipped="0" time="14.141" timestamp="2026-10-20T03:20:53" hostname="localhost">
+  <properties>
+    <property name="device" value="Pixel_6(AVD) - 17" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="activeTaskDetails_DisplayedInUi" classname="com.example.swpp.tododapp.taskdetail.TaskDetailFragmentTest" time="1.982" />
+  <testcase name="tasksList_checkThenUncheckTaskWithoutDueDate_showsClearThenNoLabel" classname="com.example.swpp.tododapp.tasks.TasksFragmentDueDateTest" time="9.13">
+    <failure>java.lang.AssertionError: expected no label after uncheck, saw 'CLEAR' visibility=0
+at org.junit.Assert.fail(Assert.java:89)
+at org.junit.Assert.assertTrue(Assert.java:42)
+at com.example.swpp.tododapp.tasks.TasksFragmentDueDateTest$tasksList_checkThenUncheckTaskWithoutDueDate_showsClearThenNoLabel$1.invokeSuspend(TasksFragmentDueDateTest.kt:113)
+at com.example.swpp.tododapp.tasks.TasksFragmentDueDateTest$tasksList_checkThenUncheckTaskWithoutDueDate_showsClearThenNoLabel$1.invoke(TasksFragmentDueDateTest.kt:8)
+at com.example.swpp.tododapp.tasks.TasksFragmentDueDateTest$tasksList_checkThenUncheckTaskWithoutDueDate_showsClearThenNoLabel$1.invoke(TasksFragmentDueDateTest.kt:4)
+at kotlinx.coroutines.test.TestBuildersKt__TestBuildersKt$runTest$2$1$1.invokeSuspend(TestBuilders.kt:317)
+at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
+at kotlinx.coroutines.test.TestDispatcher.processEvent$kotlinx_coroutines_test(TestDispatcher.kt:24)
+at kotlinx.coroutines.test.TestCoroutineScheduler.tryRunNextTaskUnless$kotlinx_coroutines_test(TestCoroutineScheduler.kt:99)
+at kotlinx.coroutines.test.TestBuildersKt__TestBuildersKt$runTest$2$1$workRunner$1.invokeSuspend(TestBuilders.kt:326)
+at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
+at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:277)
+at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:95)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:69)
+at kotlinx.coroutines.BuildersKt.runBlocking(dex-id-bf97f70f15816279eeae09b6d464cd882aa228a4-6686:1)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
+at kotlinx.coroutines.BuildersKt.runBlocking$default(dex-id-bf97f70f15816279eeae09b6d464cd882aa228a4-6687:1)
+at kotlinx.coroutines.test.TestBuildersJvmKt.createTestResult(TestBuildersJvm.kt:10)
+at kotlinx.coroutines.test.TestBuildersKt__TestBuildersKt.runTest-8Mi8wO0(TestBuilders.kt:309)
+at kotlinx.coroutines.test.TestBuildersKt.runTest-8Mi8wO0(dex-id-cda3fa74355fb6744646f2d9ca6a8b3b70ef319e-36551:1)
+at kotlinx.coroutines.test.TestBuildersKt__TestBuildersKt.runTest-8Mi8wO0(TestBuilders.kt:167)
+at kotlinx.coroutines.test.TestBuildersKt.runTest-8Mi8wO0(dex-id-cda3fa74355fb6744646f2d9ca6a8b3b70ef319e-36550:1)
+at kotlinx.coroutines.test.TestBuildersKt__TestBuildersKt.runTest-8Mi8wO0$default(TestBuilders.kt:159)
+at kotlinx.coroutines.test.TestBuildersKt.runTest-8Mi8wO0$default(dex-id-cda3fa74355fb6744646f2d9ca6a8b3b70ef319e-36552:1)
+at com.example.swpp.tododapp.tasks.TasksFragmentDueDateTest.tasksList_checkThenUncheckTaskWithoutDueDate_showsClearThenNoLabel(TasksFragmentDueDateTest.kt:91)
+</failure>
+  </testcase>
+  <testcase name="setDueDateLabel_completedWithDueDate_showsClear" classname="com.example.swpp.tododapp.tasks.TasksListBindingsTest" time="0.028" />
+  <testcase name="setDueDateLabel_activeDueIn3Days_showsDMinus3" classname="com.example.swpp.tododapp.tasks.TasksListBindingsTest" time="0.011" />
+  <testcase name="setDueDateLabel_activeOverdueBy3Days_showsDPlus3" classname="com.example.swpp.tododapp.tasks.TasksListBindingsTest" time="0.011" />
+  <testcase name="setDueDateLabel_nullTask_showsNoLabel" classname="com.example.swpp.tododapp.tasks.TasksListBindingsTest" time="0.047" />
+  <testcase name="setDueDateLabel_activeDueYesterday_showsDPlus1" classname="com.example.swpp.tododapp.tasks.TasksListBindingsTest" time="0.021" />
+  <testcase name="setDueDateLabel_noDueDateTaskCheckedThenUnchecked_showsClearThenNoLabel" classname="com.example.swpp.tododapp.tasks.TasksListBindingsTest" time="0.056">
+    <failure>java.lang.AssertionError: expected no label but saw Shown(text=CLEAR, visibility=0) (after uncheck)
+at org.junit.Assert.fail(Assert.java:89)
+at org.junit.Assert.assertTrue(Assert.java:42)
+at com.example.swpp.tododapp.tasks.TasksListBindingsTest.assertNoLabel(TasksListBindingsTest.kt:62)
+at com.example.swpp.tododapp.tasks.TasksListBindingsTest.setDueDateLabel_noDueDateTaskCheckedThenUnchecked_showsClearThenNoLabel(TasksListBindingsTest.kt:205)
+</failure>
+  </testcase>
+  <testcase name="setDueDateLabel_dueDateTaskCheckedThenUnchecked_showsDMinus3ThenClearThenDMinus3" classname="com.example.swpp.tododapp.tasks.TasksListBindingsTest" time="0.019" />
+  <testcase name="setDueDateLabel_labelledViewReusedForTaskWithoutLabel_showsNoLabel" classname="com.example.swpp.tododapp.tasks.TasksListBindingsTest" time="0.065">
+    <failure>java.lang.AssertionError: expected no label but saw Shown(text=D-3, visibility=0) (after binding B)
+at org.junit.Assert.fail(Assert.java:89)
+at org.junit.Assert.assertTrue(Assert.java:42)
+at com.example.swpp.tododapp.tasks.TasksListBindingsTest.assertNoLabel(TasksListBindingsTest.kt:62)
+at com.example.swpp.tododapp.tasks.TasksListBindingsTest.setDueDateLabel_labelledViewReusedForTaskWithoutLabel_showsNoLabel(TasksListBindingsTest.kt:243)
+</failure>
+  </testcase>
+  <testcase name="setDueDateLabel_completedNoDueDate_showsClear" classname="com.example.swpp.tododapp.tasks.TasksListBindingsTest" time="0.014" />
+  <testcase name="setDueDateLabel_clearViewBoundToNull_showsNoLabel" classname="com.example.swpp.tododapp.tasks.TasksListBindingsTest" time="0.057">
+    <failure>java.lang.AssertionError: expected no label but saw Shown(text=CLEAR, visibility=0) (after binding null)
+at org.junit.Assert.fail(Assert.java:89)
+at org.junit.Assert.assertTrue(Assert.java:42)
+at com.example.swpp.tododapp.tasks.TasksListBindingsTest.assertNoLabel(TasksListBindingsTest.kt:62)
+at com.example.swpp.tododapp.tasks.TasksListBindingsTest.setDueDateLabel_clearViewBoundToNull_showsNoLabel(TasksListBindingsTest.kt:256)
+</failure>
+  </testcase>
+  <testcase name="setDueDateLabel_activeDue42DaysAhead_showsDMinus42" classname="com.example.swpp.tododapp.tasks.TasksListBindingsTest" time="0.032">
+    <failure>org.junit.ComparisonFailure: text (dueDate=2026-12-01) expected:&lt;D-[42]&gt; but was:&lt;D-[11]&gt;
+at org.junit.Assert.assertEquals(Assert.java:117)
+at com.example.swpp.tododapp.tasks.TasksListBindingsTest.assertShows(TasksListBindingsTest.kt:57)
+at com.example.swpp.tododapp.tasks.TasksListBindingsTest.setDueDateLabel_activeDue42DaysAhead_showsDMinus42(TasksListBindingsTest.kt:157)
+</failure>
+  </testcase>
+  <testcase name="setDueDateLabel_activeNoDueDate_showsNoLabel" classname="com.example.swpp.tododapp.tasks.TasksListBindingsTest" time="0.011" />
+  <testcase name="setDueDateLabel_activeDueToday_showsDDay" classname="com.example.swpp.tododapp.tasks.TasksListBindingsTest" time="0.037" />
+  <testcase name="setDueDateLabel_activeDueTomorrow_showsDMinus1" classname="com.example.swpp.tododapp.tasks.TasksListBindingsTest" time="0.019" />
+  <testcase name="setDueDateLabel_goneViewWithLabel_showsDMinus3Visible" classname="com.example.swpp.tododapp.tasks.TasksListBindingsTest" time="0.028" />
+  <testcase name="setDueDateLabel_activeDueOnTodayBoundary_showsDDay" classname="com.example.swpp.tododapp.tasks.TasksListBindingsTest" time="0.024" />
+</testsuite>

@@ -1,0 +1,98 @@
+
+> Configure project :app
+WARNING: The option setting 'android.defaults.buildfeatures.buildconfig=true' is deprecated.
+The current default is 'false'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+To keep using this feature, add the following to your module-level build.gradle files:
+    android.buildFeatures.buildConfig = true
+or from Android Studio, click: `Refactor` > `Migrate BuildConfig to Gradle Build Files`.
+
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:dataBindingMergeDependencyArtifactsDebug UP-TO-DATE
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesDebug UP-TO-DATE
+> Task :app:dataBindingTriggerDebug UP-TO-DATE
+> Task :app:generateDebugBuildConfig UP-TO-DATE
+> Task :app:generateSafeArgsDebug UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :app:processDebugResources UP-TO-DATE
+> Task :app:kspDebugKotlin UP-TO-DATE
+> Task :app:kaptGenerateStubsDebugKotlin UP-TO-DATE
+> Task :app:kaptDebugKotlin UP-TO-DATE
+> Task :app:compileDebugKotlin UP-TO-DATE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :app:compileDebugJavaWithJavac UP-TO-DATE
+> Task :app:bundleDebugClassesToRuntimeJar UP-TO-DATE
+> Task :app:bundleDebugClassesToCompileJar UP-TO-DATE
+> Task :app:kspDebugUnitTestKotlin UP-TO-DATE
+> Task :app:kaptGenerateStubsDebugUnitTestKotlin UP-TO-DATE
+> Task :app:kaptDebugUnitTestKotlin UP-TO-DATE
+> Task :app:compileDebugUnitTestKotlin UP-TO-DATE
+> Task :app:preDebugUnitTestBuild UP-TO-DATE
+> Task :app:javaPreCompileDebugUnitTest UP-TO-DATE
+> Task :app:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :app:processDebugJavaRes UP-TO-DATE
+> Task :app:processDebugUnitTestJavaRes UP-TO-DATE
+
+> Task :app:testDebugUnitTest
+
+DueDateUtilsTest > dueDateLabel_activeOverdueBy51DaysAcrossYearEnd_returnsDPlus51 FAILED
+    org.junit.ComparisonFailure at DueDateUtilsTest.kt:124
+
+DueDateUtilsTest > dueDateLabel_activeOverdueBy31Days_returnsDPlus31 FAILED
+    org.junit.ComparisonFailure at DueDateUtilsTest.kt:230
+
+DueDateUtilsTest > dueDateLabel_activeOverdueBy30Days_returnsDPlus30 FAILED
+    org.junit.ComparisonFailure at DueDateUtilsTest.kt:220
+
+DueDateUtilsTest > dueDateLabel_activeDue31DaysAhead_returnsDMinus31 FAILED
+    org.junit.ComparisonFailure at DueDateUtilsTest.kt:188
+
+DueDateUtilsTest > dueDateLabel_activeDue32DaysAhead_returnsDMinus32 FAILED
+    org.junit.ComparisonFailure at DueDateUtilsTest.kt:198
+
+DueDateUtilsTest > dueDateLabel_activeOverdueBy49Days_returnsDPlus49 FAILED
+    org.junit.ComparisonFailure at DueDateUtilsTest.kt:104
+
+DueDateUtilsTest > dueDateLabel_activeDue42DaysAhead_returnsDMinus42 FAILED
+    org.junit.ComparisonFailure at DueDateUtilsTest.kt:94
+
+DueDateUtilsTest > dueDateLabel_wholeFebruaryInLeapYear_returnsDMinus29 FAILED
+    org.junit.ComparisonFailure at DueDateUtilsTest.kt:346
+
+DueDateUtilsTest > dueDateLabel_activeDueExactlyOneYearAhead_returnsDMinus365 FAILED
+    org.junit.ComparisonFailure at DueDateUtilsTest.kt:134
+
+DueDateUtilsTest > dueDateLabel_activeDue52DaysAheadAcrossYearEnd_returnsDMinus52 FAILED
+    org.junit.ComparisonFailure at DueDateUtilsTest.kt:114
+
+DueDateUtilsTest > dueDateLabel_wholeFebruaryInCommonYear_returnsDMinus28 FAILED
+    org.junit.ComparisonFailure at DueDateUtilsTest.kt:356
+
+35 tests completed, 11 failed
+
+> Task :app:testDebugUnitTest FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:testDebugUnitTest'.
+> There were failing tests. See the report at: file:///C:/Users/user/Desktop/SWPP-2026-Testing-Practice/app/build/reports/tests/testDebugUnitTest/index.html
+
+* Try:
+> Run with --scan to get full insights.
+
+BUILD FAILED in 18s
+34 actionable tasks: 1 executed, 33 up-to-date

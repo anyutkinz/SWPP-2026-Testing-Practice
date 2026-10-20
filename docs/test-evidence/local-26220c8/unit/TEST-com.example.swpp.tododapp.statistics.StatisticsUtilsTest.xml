@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.swpp.tododapp.statistics.StatisticsUtilsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-20T03:19:55.354Z" hostname="MYCOMPUHTER" time="0.001">
+  <properties/>
+  <testcase name="getActiveAndCompletedStats_two_return50f50f" classname="com.example.swpp.tododapp.statistics.StatisticsUtilsTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
