@@ -1,0 +1,19 @@
+  9985 10016 I DueDateLabelTest: label view reused across check/uncheck: true
+  9985  9985 I DueDateLabelTest: completedWithDueDate: referenceDate=2026-10-20 attempt=1 observed=Shown(text=CLEAR, visibility=0)
+  9985  9985 I DueDateLabelTest: activeDueIn3Days: offset=3 dueDate=2026-10-23
+  9985  9985 I DueDateLabelTest: activeDueIn3Days: referenceDate=2026-10-20 attempt=1 observed=(2026-10-23, Shown(text=D-3, visibility=0))
+  9985  9985 I DueDateLabelTest: activeOverdueBy3Days: offset=-3 dueDate=2026-10-17
+  9985  9985 I DueDateLabelTest: activeOverdueBy3Days: referenceDate=2026-10-20 attempt=1 observed=(2026-10-17, Shown(text=D+3, visibility=0))
+  9985  9985 I DueDateLabelTest: activeDueYesterday: offset=-1 dueDate=2026-10-19
+  9985  9985 I DueDateLabelTest: activeDueYesterday: referenceDate=2026-10-20 attempt=1 observed=(2026-10-19, Shown(text=D+1, visibility=0))
+  9985  9985 I DueDateLabelTest: dueDateTaskCheckedThenUnchecked: referenceDate=2026-10-20 attempt=1 observed=[Shown(text=D-3, visibility=0), Shown(text=CLEAR, visibility=0), Shown(text=D-3, visibility=0)]
+  9985  9985 I DueDateLabelTest: labelledViewReusedForTaskWithoutLabel: referenceDate=2026-10-20 attempt=1 observed=(Shown(text=D-3, visibility=0), Shown(text=D-3, visibility=0))
+  9985  9985 I DueDateLabelTest: activeDue42DaysAhead: offset=42 dueDate=2026-12-01
+  9985  9985 I DueDateLabelTest: activeDue42DaysAhead: referenceDate=2026-10-20 attempt=1 observed=(2026-12-01, Shown(text=D-11, visibility=0))
+  9985  9985 I DueDateLabelTest: activeDueToday: offset=0 dueDate=2026-10-20
+  9985  9985 I DueDateLabelTest: activeDueToday: referenceDate=2026-10-20 attempt=1 observed=(2026-10-20, Shown(text=D-Day, visibility=0))
+  9985  9985 I DueDateLabelTest: activeDueTomorrow: offset=1 dueDate=2026-10-21
+  9985  9985 I DueDateLabelTest: activeDueTomorrow: referenceDate=2026-10-20 attempt=1 observed=(2026-10-21, Shown(text=D-1, visibility=0))
+  9985  9985 I DueDateLabelTest: goneViewWithLabel: referenceDate=2026-10-20 attempt=1 observed=Shown(text=D-3, visibility=0)
+  9985  9985 I DueDateLabelTest: activeDueOnTodayBoundary: offset=0 dueDate=2026-10-20
+  9985  9985 I DueDateLabelTest: activeDueOnTodayBoundary: referenceDate=2026-10-20 attempt=1 observed=(2026-10-20, Shown(text=D-Day, visibility=0))
