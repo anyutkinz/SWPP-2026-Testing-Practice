@@ -11,7 +11,7 @@
 **Pre-conditions**
 - Called on the main thread with a `TextView` created from a valid `Context` (in the app: `due_date_text` in `task_item.xml`).
 - `task` may be `null` (the row has no task bound yet).
-- The reference date ("today") is the Android device's current local date, which the function reads itself with `LocalDate.now()`; it cannot be fixed without changing production code. Each Tip therefore builds its due date with the recipe `today = LocalDate.now()` (read on the device under test, not on the host) and `dueDate = today.plusDays(k)` for a stated offset `k`. The expected label depends only on `k`, so the literal expected string is exact on every run date. Examples for reference date 2026-10-20: k = +3 → dueDate 2026-10-23 → `"D-3"`; k = +42 → dueDate 2026-12-01 → `"D-42"`; k = −3 → dueDate 2026-10-17 → `"D+3"`.
+- The reference date ("today") is the Android device's current local date, which the function reads itself with `LocalDate.now()`; the binding exposes no reference-date or `Clock` parameter, so these tests use device-relative fixtures and do not modify production code. Each Tip builds its due date with the recipe `today = LocalDate.now()` (read on the device under test, not on the host) and `dueDate = today.plusDays(k)` for a stated offset `k`. The expected label depends only on `k`, so the literal expected string is exact on every run date. Examples for reference date 2026-10-20: k = +3 → dueDate 2026-10-23 → `"D-3"`; k = +42 → dueDate 2026-12-01 → `"D-42"`; k = −3 → dueDate 2026-10-17 → `"D+3"`.
 - The test's reference date equals the date the function reads. A test reads the device date before building its fixture and again after the last call; if the two differ (the device clock passed midnight), that attempt is a test-environment race: it is discarded and repeated with regenerated fixtures, and its observations are never asserted.
 
 **Post-conditions**
@@ -30,7 +30,7 @@
     - Tip: Given a new TextView and Task(title = "Task", isCompleted = false, dueDate = null) / When setDueDateLabel(textView, task) is called / Then textView.text.toString().isEmpty() || textView.visibility != View.VISIBLE is true.
   - No task (`null`): the `TextView` shows no label. `[Integration]`
     - Tip: Given a new TextView / When setDueDateLabel(textView, null) is called / Then textView.text.toString().isEmpty() || textView.visibility != View.VISIBLE is true.
-  - Active task due more than one month ahead: N counts every calendar day, so the label matches the total number of days. 42 days always span more than one calendar month, so `"D-42"` separates the total day count from a day-of-month difference on every run date. `[Integration]`
+  - Active task due more than one month ahead: N counts every calendar day, so the label matches the total number of days. 42 days always span more than one calendar month, so `"D-42"` separates the total day count from the days component of a years/months/days period (such as `java.time.Period`) on every run date. `[Integration]`
     - Tip: Given a new TextView and Task(title = "Task", isCompleted = false, dueDate = today.plusDays(42)) (e.g. 2026-10-20 → 2026-12-01) / When setDueDateLabel(textView, task) is called / Then textView.text is "D-42" and textView.visibility is View.VISIBLE.
 - Error cases
   - None. Every `Task`, with or without a due date, and `null` are valid input.
